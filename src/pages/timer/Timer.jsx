@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 export default function Timer() {
-  const [timeLeft, setTimeLeft] = useState(0);
   const [isTimerActive, setTimerActive] = useState(false);
-  const [lastPeriod, setLastPeriod] = useState(0);
-  const [message, setMessage] = useState("");
+  const [timeLeft, setTimeLeft] = useState(0);
+  const [isReset, setReset] = useState(false);
+  const [period, setPeriod] = useState(0);
+  const [message, setMessage] = useState("Час працювати");
 
   const minutes = Math.floor(timeLeft / 60)
     .toString()
@@ -21,34 +22,49 @@ export default function Timer() {
   };
 
   useEffect(() => {
-    const interval = setTimeout(() => {
-      isTimerActive &&
-        setTimeLeft((timeLeft) => (timeLeft > 0 ? timeLeft - 1 : 0));
-    }, 1000);
+    // reseter effect
+    if (isReset) {
+      // reset other values
+      setReset(false);
+      setPeriod(0);
+      setTimeLeft(0);
+      setTimerActive(false)
+    }
+  }, [isReset]);
 
-    if (timeLeft === 0) {
-      if ([0, 2, 4, 6].includes(lastPeriod)) {
-        setTimeLeft(25 * 60);
-        setMessage("Час працювати");
-        setLastPeriod(lastPeriod + 1);
-      } else if ([1, 3, 5].includes(lastPeriod)) {
-        setTimeLeft(5 * 60);
-        setMessage("Час трохи відпочити");
-        setLastPeriod(lastPeriod + 1);
-      } else if (lastPeriod === 7) {
-        setTimeLeft(30 * 60);
-        setMessage("Зробіть велику паузу");
-        setLastPeriod(lastPeriod + 1);
+  useEffect(() => {
+    // timer effect
+    if (isTimerActive) {
+      if (timeLeft > 0) {
+        // schedule next timer tick
+        const timer = setTimeout(() => {
+          setTimeLeft((timeLeft) => timeLeft - 1);
+        }, 1000);
+  
+        return () => clearTimeout(timer);
       } else {
-        setTimerActive(false);
-        setLastPeriod(0);
+        // go to the next period
+        setPeriod((period) => period + 1);
       }
     }
+  }, [timeLeft, isTimerActive]);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [isTimerActive, timeLeft, lastPeriod]);
+  useEffect(() => {
+    // period update effect
+    if ([1, 3, 5, 7].includes(period)) {
+      setTimeLeft(15);
+      setMessage("Час працювати")
+    } else if ([2, 4, 6].includes(period)) {
+      setTimeLeft(5);
+      setMessage("Час відпочити")
+    } else if (period === 8) {
+      setTimeLeft(10);
+      setMessage("Велика пауза")
+    } else {
+      setPeriod(1);
+    }
+  }, [period]);
+
 
   return (
     <div className="app">
@@ -58,11 +74,11 @@ export default function Timer() {
       <div className="message">{message}</div>
       <div className="buttons">
         {isTimerActive ? (
-            <button onClick={handleStop}>Пауза</button>
+          <button onClick={handleStop}>Пауза</button>
         ) : (
           <button onClick={handleStart}>Старт</button>
         )}
-        <button onClick={() => setTimeLeft(1)}>Reset</button>
+        <button onClick={() => setReset(true)}>Reset</button>
       </div>
     </div>
   );
