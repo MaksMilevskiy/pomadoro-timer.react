@@ -1,49 +1,106 @@
 * {
     margin: 0;
+    font-size: 62.5%;
+    box-sizing: border-box;
 }
 
-.app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    width: 100%;
-    height: 48vw;
-
-    background-color: lightgrey;
+body {
+    background: url("./images/tomatoes_bg.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
-.timer {
-    color: brown;
-    font-size: 8rem;
+#root {
+    margin: 10vh 10vw;
+    
 }
 
-.buttons {
-    display: flex;
-    gap: 0.7rem;
+@media (max-width: 108em) {
+    html {
+        font-size: 9px;
+    }
 }
 
-.buttons button {
-    width: 6.5rem;
-    height: 4rem;
-    padding: 0.2rem;
-
-    color: white;
-    background-color: rgb(141, 141, 141);
-
-    cursor: pointer;
-
-    transition: all 0.2s;
-
-    font-size: 1.2rem;
-
-    border-radius: 5px;
-    border: 0;
+@media (max-width: 105em) {
+    html {
+        font-size: 8.75px;
+    }
 }
 
-.buttons button:hover {
-    color: beige;
-    background-color: rgb(121, 121, 121);
+@media (max-width: 91.5em) {
+    html {
+        font-size: 7.9px;
+    }
+}
+
+@media (max-width: 91em) {
+    html {
+        font-size: 8.4px;
+    }
+}
+
+@media (max-width: 90em) {
+    html {
+        font-size: 7.9px;
+    }
+}
+
+@media (max-width: 80em) {
+    html {
+        font-size: 7.2px;
+    }
+}
+
+@media (max-width: 72em) {
+    html {
+        font-size: 6.5px;
+    }
+}
+
+@media (max-width: 64em) {
+    html {
+        font-size: 5.5px;
+    }
+}
+
+@media (max-width: 48em) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 44em) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 38em) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 34em) {
+    html {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 30em) {
+    html {
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 26em) {
+    html {
+        font-size: 4.5px;
+    }
+}
+
+@media (max-width: 21em) {
+    html {
+        font-size: 4.4px;
+    }
 }

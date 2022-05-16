@@ -17,9 +17,6 @@ export default function Timer() {
   const handleStart = () => {
     setTimerActive(true);
   };
-  const handleStop = () => {
-    setTimerActive(false);
-  };
 
   useEffect(() => {
     // reseter effect
@@ -68,17 +65,16 @@ export default function Timer() {
 
   return (
     <div className="app">
+      <div className="message">{message}</div>
       <div className="timer">
         {minutes}:{seconds}
       </div>
-      <div className="message">{message}</div>
       <div className="buttons">
         {isTimerActive ? (
-          <button onClick={handleStop}>Пауза</button>
+          <button onClick={() => setReset(true)}>Reset</button>
         ) : (
           <button onClick={handleStart}>Старт</button>
         )}
-        <button onClick={() => setReset(true)}>Reset</button>
       </div>
     </div>
   );
