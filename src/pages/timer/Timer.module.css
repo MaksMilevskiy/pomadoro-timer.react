@@ -1,0 +1,114 @@
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: "El Messiri", sans-serif;
+  font-size: 4vh;
+  color: black;
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0rem 1rem;
+  border-radius: 3rem;
+  border: none;
+  cursor: pointer;
+}
+
+a:hover,
+button:hover {
+  background-color: rgba(201, 71, 35, 1);
+}
+
+.app {
+  height: 80vh;
+  width: 80vw;
+  background-image: url("../../images/tomato.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.to_main {
+  font-family: "El Messiri", sans-serif;
+  font-size: 3vh;
+  color: black;
+  align-self: center;
+  background-color: rgba(165, 165, 165, 0.8);
+  padding: 0rem 2rem;
+  border-radius: 3rem;
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+}
+
+.timer_wrapper {
+  border-radius: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.message {
+  margin: 2rem;
+  font-family: "El Messiri", sans-serif;
+  font-size: 6vh;
+}
+
+.timer {
+  color: black;
+  font-family: "Dancing Script";
+  padding: 1rem;
+  font-size: 10vh;
+}
+
+@media (max-width: 30em) {
+    .wrapper {
+        margin-top: 4rem;
+    }
+    .message {
+        font-size: 6rem;
+    }
+    .timer {
+        font-size: 7rem;
+    }
+    button {
+        font-size: 5rem;
+    }
+    a:hover,
+    button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    }
+}
+
+@media (max-width: 50em) {
+    .wrapper {
+        margin-top: 3rem;
+    }
+    .message {
+        font-size: 5rem;
+    }
+    .timer {
+        font-size: 6rem;
+    }
+    button {
+        font-size: 4rem;
+    }
+    a:hover,
+    button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    }
+}

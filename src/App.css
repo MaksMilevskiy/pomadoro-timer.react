@@ -1,11 +1,11 @@
 * {
     margin: 0;
-    font-size: 62.5%;
+    font-size: 10px;
     box-sizing: border-box;
 }
 
 body {
-    background: url("./images/tomatoes_bg.jpg");
+    background: url('images/tomatoes_bg.jpg');
     background-position: center;
     background-size: cover;
 }
