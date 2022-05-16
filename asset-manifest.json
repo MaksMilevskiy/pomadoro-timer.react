@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pomadoro-timer-gh-pages/static/css/main.1ec2136c.css",
+    "main.js": "/pomadoro-timer-gh-pages/static/js/main.a9d1f00d.js",
+    "static/media/tomatoes_bg.jpg": "/pomadoro-timer-gh-pages/static/media/tomatoes_bg.052c56e9fac65cb7cf88.jpg",
+    "static/media/tomato.png": "/pomadoro-timer-gh-pages/static/media/tomato.8965a54796270f82455c.png",
+    "index.html": "/pomadoro-timer-gh-pages/index.html",
+    "main.1ec2136c.css.map": "/pomadoro-timer-gh-pages/static/css/main.1ec2136c.css.map",
+    "main.a9d1f00d.js.map": "/pomadoro-timer-gh-pages/static/js/main.a9d1f00d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ec2136c.css",
+    "static/js/main.a9d1f00d.js"
+  ]
+}
